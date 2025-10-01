@@ -24,6 +24,7 @@ APIs: Unsplash, OpenWeatherMap, Wikipedia
 Deployment: Git, GitHub, GitHub Pages, GitHub Actions
 
 Screenshots
+
 **Homepage**
 ![Homepage Screenshot](./assets/screenshots/homepage.jpg)
 
@@ -31,7 +32,9 @@ Screenshots
 ![Destination Page Screenshot](./assets/screenshots/destination-page.jpg)
 
 **Weather Dashboard**
+
 ![Weather Dashboard Screenshot](./assets/screenshots/weather-dashboard.jpg)
+
 Local Setup
 To run this project on your local machine:
 
