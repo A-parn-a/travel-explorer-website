@@ -19,11 +19,13 @@ Features
 </ul>
 
 Technologies Used
-Frontend: HTML5, CSS3, JavaScript (ES6+)
+<ul>
+<li>Frontend: HTML5, CSS3, JavaScript (ES6+)</li>
 
-APIs: Unsplash, OpenWeatherMap, Wikipedia
+<li>APIs: Unsplash, OpenWeatherMap, Wikipedia</li>
 
-Deployment: Git, GitHub, GitHub Pages, GitHub Actions
+<li>Deployment: Git, GitHub, GitHub Pages, GitHub Actions</li>
+</ul>
 
 Screenshots
 
