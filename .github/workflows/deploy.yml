@@ -29,6 +29,7 @@ jobs:
       - name: Create secrets.js file
         # This step securely reads your GitHub Secrets and writes them into the secrets.js file
         run: |
+          mkdir -p assets/js
           echo "const UNSPLASH_API_KEY = '${{ secrets.UNSPLASH_API_KEY }}';" > assets/js/secrets.js
           echo "const OPENWEATHER_API_KEY = '${{ secrets.OPENWEATHER_API_KEY }}';" >> assets/js/secrets.js
       - name: Setup Pages
@@ -50,4 +51,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-```
+
