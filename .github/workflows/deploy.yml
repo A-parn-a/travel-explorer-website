@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Create secrets file
+      - name: Create secrets.js file from GitHub Secrets
         run: |
           echo "const UNSPLASH_API_KEY = '${{ secrets.UNSPLASH_API_KEY }}';" > assets/js/secrets.js
           echo "const OPENWEATHER_API_KEY = '${{ secrets.OPENWEATHER_API_KEY }}';" >> assets/js/secrets.js
