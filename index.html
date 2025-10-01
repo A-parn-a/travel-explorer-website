@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Explorer - Find Your Next Adventure</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <!-- ======================= Header ======================= -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <h2>Travel Explorer</h2>
+        </a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for a destination..." />
+        <button type="submit">Search</button>
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile Icons Wrapper -->
+      <div class="mobile-icons">
+        <!-- Mobile Search Icon -->
+        <div class="mobile-search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Search Bar (initially hidden) -->
+    <form class="mobile-search-bar" id="mobile-search-form">
+      <input type="text" id="mobile-search-input" placeholder="Search for any destination...">
+      <button type="submit">Search</button>
+    </form>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================= Hero Section ======================= -->
+    <section class="hero">
+      <!-- This container will hold the sliding background images -->
+      <div class="hero-slides-container">
+        <div class="hero-slide active"
+          style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwNXwwfDF8c2VhcmNofDE4fHx0cmF2ZWx8ZW58MHx8fHwxNjk2NTU0MzY4fDA&ixlib=rb-4.0.3&q=80&w=1080');">
+        </div>
+        <div class="hero-slide"
+          style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwNXwwfDF8c2VhcmNofDEyfHx0cmF2ZWx8ZW58MHx8fHwxNjk2NTU0MzY4fDA&ixlib=rb-4.0.3&q=80&w=1080');">
+        </div>
+        <div class="hero-slide"
+          style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwNXwwfDF8c2VhcmNofDR8fHRyYXZlbHxlbnwwfHx8fDE2OTY1NTQzNjh8MA&ixlib=rb-4.0.3&q=80&w=1080');">
+        </div>
+      </div>
+
+      <!-- Dark overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Content remains on top -->
+      <div class="hero-content">
+        <h1>Discover Your Next Adventure</h1>
+        <p>Explore the world's most beautiful destinations, one click at a time.</p>
+        <a href="#destinations" class="cta-button">Explore Now</a>
+      </div>
+
+      <!-- Carousel navigation arrows -->
+      <button class="carousel-arrow prev" id="hero-prev">&#10094;</button>
+      <button class="carousel-arrow next" id="hero-next">&#10095;</button>
+    </section>
+
+    <!-- ======================= Featured Destinations Section ======================= -->
+    <section id="destinations" class="destinations-section">
+      <div class="container">
+        <h2>Popular Destinations</h2>
+        <div id="destinations-grid" class="destinations-grid">
+          <!-- Destination cards will be dynamically inserted here by JavaScript. -->
+          <div class="destination-card">
+            <img src="https://placehold.co/400x300/0077B6/FFFFFF?text=Paris" alt="Destination Image" />
+            <div class="card-content">
+              <h3>Paris, France</h3>
+              <p>
+                The city of lights, known for its art, fashion, and culture.
+              </p>
+            </div>
+          </div>
+          <div class="destination-card">
+            <img src="https://placehold.co/400x300/FF6B6B/FFFFFF?text=Kyoto" alt="Destination Image" />
+            <div class="card-content">
+              <h3>Kyoto, Japan</h3>
+              <p>
+                A beautiful city of temples, gardens, and traditional
+                teahouses.
+              </p>
+            </div>
+          </div>
+          <div class="destination-card">
+            <img src="https://placehold.co/400x300/333333/FFFFFF?text=Rome" alt="Destination Image" />
+            <div class="card-content">
+              <h3>Rome, Italy</h3>
+              <p>
+                Explore ancient ruins, stunning art, and vibrant street life.
+              </p>
+            </div>
+          </div>
+          <!-- More cards will be added here... -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= Footer ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-column">
+        <h3>Travel Explorer</h3>
+        <p>Your ultimate companion for planning unforgettable journeys.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <!-- Facebook Icon -->
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+              class="social-icon">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <!-- Instagram Icon -->
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- X (Twitter) Icon -->
+          <a href="https://x.com" target="_blank" aria-label="X - formerly Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+              class="social-icon">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Travel Explorer. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <!-- IMPORTANT: config.js must be first to provide API keys to other scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>

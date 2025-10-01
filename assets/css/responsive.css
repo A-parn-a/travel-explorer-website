@@ -1,0 +1,169 @@
+/* ======================= TABLET (768px to 1024px) ======================= */
+@media (max-width: 1024px) {
+  .header .container {
+    padding: 0 30px;
+  }
+
+  .header .search-bar {
+    width: 250px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  .footer .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* ======================= MOBILE (Under 768px) ======================= */
+@media (max-width: 768px) {
+  /* Hide DESKTOP elements on mobile */
+  .header .search-bar {
+    display: none;
+  }
+  .header .navigation {
+    display: none; /* Handled by JS, but good to have as a base rule */
+  }
+  /* Show Movile Elements */
+  .mobile-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .mobile-search-icon {
+    display: block; /* Show the icon */
+    cursor: pointer;
+    color: var(--primary-color);
+  }
+
+  .mobile-search-bar {
+    display: flex;
+    position: absolute;
+    top: 70px; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background: var(--white-color);
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    /* Animation: Initially hidden */
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  .mobile-search-bar.active {
+    /* Animation: Make it visible */
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-search-bar input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+  }
+
+  .mobile-search-bar button {
+    border: none;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 0 1.5rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+  }
+  /* Hide the default navigation links */
+  .navigation {
+    display: none; /* Hide it by default */
+    position: absolute;
+    top: 70px; /* Position it below the header */
+    left: 0;
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  .navigation.active {
+    display: block; /* Show the menu when it's active */
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .navigation ul li {
+    text-align: center;
+    margin: 0;
+  }
+
+  .navigation ul li a {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .navigation ul li:last-child a {
+    border-bottom: none;
+  }
+  .header .search-bar {
+    display: none; /* Hide search bar, could be revealed with a click */
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .container {
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard | Travel Explorer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ======================= Header ======================= -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h2>Travel Explorer</h2>
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#destinations">Destinations</a></li>
+                    <li><a href="weather.html" class="active">Weather</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======================= Weather Dashboard Section ======================= -->
+        <section class="weather-dashboard-section">
+            <div class="container">
+                <div class="weather-header">
+                    <h1>Live Weather Dashboard</h1>
+                    <p class="subtitle">Enter a city name to get the current weather and a 5-day forecast.</p>
+                </div>
+
+                <div class="weather-search">
+                    <input type="text" id="city-input" placeholder="E.g., London, Tokyo, New York...">
+                    <button id="get-weather-btn">Get Weather</button>
+                </div>
+
+                <!-- This container will have an initial state -->
+                <div id="weather-results" class="weather-results-container">
+                    <!-- Initial State Message -->
+                    <div class="initial-state">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-cloud-sun">
+                            <path d="M12 12a5 5 0 0 0 5-5 5 5 0 0 0-5-5V2" />
+                            <path d="M12 12a5 5 0 0 0-5 5 5 5 0 0 0 5 5v-5z" />
+                            <path d="M12 12a5 5 0 0 1 5 5 5 5 0 0 1-5 5v-5z" />
+                            <path d="M12 12a5 5 0 0 1-5-5 5 5 0 0 1 5-5V2" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="m4.93 19.07 1.41-1.41" />
+                            <path d="m17.66 6.34 1.41-1.41" />
+                            <path d="M18 20a4 4 0 0 0-4-4h-4a4 4 0 0 0 0 8h12a4 4 0 0 0-4-4z" />
+                        </svg>
+                        <h3>Waiting for your command</h3>
+                        <p>Search for a city to see the magic happen!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= Footer ======================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-column">
+                <h3>Travel Explorer</h3>
+                <p>Your ultimate companion for planning unforgettable journeys.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#destinations">Destinations</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <!-- Facebook Icon -->
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" class="social-icon">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <!-- Instagram Icon -->
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="social-icon">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <!-- X (Twitter) Icon -->
+                    <a href="https://x.com" target="_blank" aria-label="X - formerly Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" class="social-icon">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Travel Explorer. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>

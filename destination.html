@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title will be dynamically set by JS -->
+    <title>Explore Destination | Travel Explorer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+    <!-- ======================= Header ======================= -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h2>Travel Explorer</h2>
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for a destination..." />
+                <button type="submit">Search</button>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======================= Destination Detail Section ======================= -->
+        <section class="destination-detail-section">
+            <div class="container">
+                <!-- Content will be loaded here by JavaScript -->
+                <div id="destination-content">
+                    <!-- Example structure (to be replaced by JS) -->
+                    <h1 id="destination-title">Destination Name</h1>
+                    <p id="destination-country" class="country-name">Country</p>
+
+                    <div id="image-gallery" class="image-gallery">
+                        <!-- Main image and thumbnails will be inserted here -->
+                        <img src="https://placehold.co/1200x600/cccccc/FFFFFF?text=Loading+Image..."
+                            alt="Main destination image" class="main-image" />
+                    </div>
+
+                    <div class="info-layout">
+                        <div class="about-destination">
+                            <h2>About this Destination</h2>
+                            <p id="destination-description">Loading description...</p><br>
+                            <a href="index.html#destinations" class="back-button">&larr; Back to Destinations</a>
+                        </div>
+                        <div id="weather-widget" class="weather-widget">
+                            <h2>Current Weather</h2>
+                            <p>Loading weather data...</p>
+                            <!-- Weather details will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= Footer ======================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-column">
+                <h3>Travel Explorer</h3>
+                <p>Your ultimate companion for planning unforgettable journeys.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#destinations">Destinations</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <!-- Facebook Icon -->
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" class="social-icon">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <!-- Instagram Icon -->
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="social-icon">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <!-- X (Twitter) Icon -->
+                    <a href="https://x.com" target="_blank" aria-label="X - formerly Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" class="social-icon">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Travel Explorer. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

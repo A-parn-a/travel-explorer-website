@@ -1,0 +1,777 @@
+/* ======================= VARIABLES & GLOBAL STYLES ======================= */
+:root {
+  --primary-color: #0077b6;
+  --secondary-color: #ff6b6b;
+  --text-color: #333333;
+  --background-color: #f8f9fa;
+  --white-color: #ffffff;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Lato", sans-serif;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ======================= HEADER ======================= */
+.header {
+    background-color: var(--white-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky; /* Keeps header at the top when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* A high number to ensure it's on top of all other content */
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.header .search-bar {
+  display: flex;
+  width: 300px;
+}
+.header .search-bar input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  outline: none;
+}
+.header .search-bar button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  cursor: pointer;
+}
+
+.header .navigation ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.header .navigation a {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.header .navigation a.active {
+  color: var(--secondary-color);
+}
+/* Hide mobile-only elements by default on desktop */
+.mobile-icons {
+    display: none;
+}
+.mobile-search-bar {
+    display: none;
+}
+.hamburger-menu {
+  position: relative;
+  z-index: 1001;
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+}
+
+/* ======================= HERO SECTION ======================= */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white-color);
+  position: relative; /* Crucial for positioning children */
+  overflow: hidden; /* Hides parts of slides that might stick out */
+}
+
+.hero-slides-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
+  will-change: opacity; /* Helps browser optimize the animation */
+}
+
+.hero-slide.active {
+  opacity: 1; /* Visible slide */
+}
+
+/* Overlay to use a separate div */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay and slides */
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  transform: translateY(-3px);
+}
+
+/* Carousel arrows styling */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.carousel-arrow.prev {
+  left: 20px;
+}
+.carousel-arrow.next {
+  right: 20px;
+}
+
+/* ======================= DESTINATIONS SECTION ======================= */
+.destinations-section,
+.about-section,
+.destination-detail-section {
+  padding: 4rem 0;
+}
+.destinations-section h2,
+.about-section h1,
+.destination-detail-section h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.destination-card {
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.destination-card:hover {
+  transform: translateY(-10px);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-card .card-content {
+  padding: 1.5rem;
+}
+.destination-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ======================= DESTINATION DETAIL PAGE ======================= */
+.country-name {
+  text-align: center;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #777;
+}
+.image-gallery .main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+.info-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.weather-widget {
+  background-color: var(--white-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+/* ======================= FOOTER ======================= */
+.footer {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  padding: 3rem 0 0;
+}
+
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer h3,
+.footer h4 {
+  color: var(--white-color);
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: var(--background-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid #555;
+}
+
+/* Animation for cards */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles for the active mobile navigation */
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navigation.active {
+    display: block;
+  }
+  .navigation ul {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .navigation ul li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+}
+
+/* ======================= SUBTITLE FOR PAGES ======================= */
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: -1rem auto 3rem;
+}
+
+/* ======================= WEATHER DASHBOARD ======================= */
+.weather-dashboard-section {
+  padding: 4rem 0;
+  min-height: 70vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.weather-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.weather-header h1 {
+  margin-bottom: 0.5rem;
+}
+.weather-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  gap: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.weather-search input {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.weather-search input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.2);
+}
+.weather-search button {
+  padding: 0.85rem 1.75rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.3);
+}
+.weather-search button:hover {
+  background-color: var(--secondary-color);
+  transform: translate(-2px);
+  box-shadow: 0 6px 15px rgba(0, 119, 182, 0.4);
+}
+.weather-results-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.initial-state {
+  text-align: center;
+  color: #888;
+  padding: 3rem;
+}
+.initial-state svg {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+.current-weather,
+.forecast-container {
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eef;
+}
+.current-weather {
+  margin-bottom: 2rem;
+}
+.current-weather-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.current-weather-content img {
+  width: 100px;
+  height: 100px;
+}
+.current-weather .temp {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.current-weather .desc {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  margin-top: -1rem;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+.forecast-card {
+  padding: 1.5rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+.forecast-card:hover {
+  transform: translateY(-5px);
+  background-color: #f0f0f0;
+}
+
+.forecast-day {
+  font-weight: 700;
+}
+
+/* --- THE ANIMATION --- */
+.fade-in {
+  animation: fadeInAnimation 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ======================= CONTACT PAGE ======================= */
+.contact-section {
+  padding: 4rem 0;
+  background-color: #f9fafb; 
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.contact-details {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.contact-info-card h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.contact-info-card p {
+  margin: 0;
+  color: #666;
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+}
+
+.contact-form .cta-button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.map-container {
+  height: 100%;
+  min-height: 500px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Responsive Update for Contact Page --- */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================= ABOUT PAGE STYLES ======================= */
+.about-hero {
+  height: 40vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwNXwwfDF8c2VhcmNofDEwfHx0cmF2ZWx8ZW58MHx8fHwxNjk2NTU0MzY4fDA&ixlib=rb-4.0.3&q=80&w=1080");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.about-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-hero-content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.about-content-section {
+  padding: 4rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.about-text-content p {
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.about-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.about-card-icon {
+  flex-shrink: 0;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.about-card-text h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.about-card-text p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.about-image-content img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Responsive Update for About Page --- */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-image-content {
+    order: -1; /* Move image to the top on smaller screens */
+    margin-bottom: 2rem;
+  }
+}
+/* ======================= BACK BUTTON STYLING ======================= */
+.back-button {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #e0e0e0;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================= SOCIAL ICONS STYLING ======================= */
+.social-icons {
+  display: flex;
+  gap: 1rem; /* Space between icons */
+}
+
+.social-icons a {
+  color: #a0aec0; /* A nice, soft grey for the icons */
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--primary-color); /* The main blue color on hover */
+  transform: translateY(-3px); /* A slight lift effect on hover */
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
