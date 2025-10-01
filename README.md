@@ -4,17 +4,19 @@ Live Site: https://a-parn-a.github.io/travel-explorer-website/
 A responsive and dynamic travel destination exploration website built with vanilla HTML, CSS, and JavaScript. This project provides a clean, modern interface for users to discover popular destinations, view stunning photography, and check real-time weather information, simplifying the trip planning process.
 
 Features
-Dynamic Hero Carousel
+<ul>
+<li>Dynamic Hero Carousel</li>
 
-API-Driven Content
+<li>API-Driven Content</li>
 
-Popular Destinations & Search
+<li>Popular Destinations & Search</li>
 
-Detailed Destination Pages (Description, Gallery, Weather)
+<li>Detailed Destination Pages (Description, Gallery, Weather)</li>
 
-Live Weather Dashboard with 5-Day Forecast
+<li>Live Weather Dashboard with 5-Day Forecast</li>
 
-Fully Responsive Design with Animated Mobile Navigation
+<li>Fully Responsive Design with Animated Mobile Navigation</li>
+</ul>
 
 Technologies Used
 Frontend: HTML5, CSS3, JavaScript (ES6+)
