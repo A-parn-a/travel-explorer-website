@@ -49,6 +49,3 @@ cd travel-explorer-website
 Create your own secrets.js file at assets/js/secrets.js with your API keys.
 
 Open index.html in your browser.
-
-License
-This project is licensed under the MIT License.
